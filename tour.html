@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Tour Du Lịch - Vietjet Travel</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- sql.js WebAssembly -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <img src="Images/vietjet-air.png" alt="Vietjet Logo">
+        <span class="brand-text">Vietjet<span>.com</span></span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Trang Chủ</a>
+        <a href="flights.html" class="nav-link">Chuyến Bay</a>
+        <a href="tour.html" class="nav-link active">Tour Du Lịch</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="hotline-pill">
+          <i class="fas fa-phone-alt"></i>
+          <span>1900 1886</span>
+        </div>
+        <a href="cart.html" class="cart-btn-link" title="Xem Giỏ Hàng">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-layout-wrapper">
+      
+      <!-- CỘT TRÁI: BỘ LỌC TOUR (TOUR FILTER SIDEBAR) -->
+      <aside class="filter-sidebar">
+        <div class="filter-sidebar-header">
+          <h3 style="font-size: 16px;"><i class="fas fa-filter text-primary"></i> Bộ Lọc Tour</h3>
+          <a href="tour.html" class="text-primary font-semibold" style="font-size: 13px;">Đặt lại</a>
+        </div>
+
+        <!-- Sắp xếp giá tour -->
+        <div class="filter-group">
+          <div class="filter-title">Sắp xếp giá tour</div>
+          <select class="form-control" id="sortTourPrice">
+            <option value="price_asc">Giá tăng dần (Thấp - Cao)</option>
+            <option value="price_desc">Giá giảm dần (Cao - Thấp)</option>
+          </select>
+        </div>
+
+        <!-- Hãng hàng không bay cùng tour -->
+        <div class="filter-group">
+          <div class="filter-title">Hãng hàng không</div>
+          <label class="checkbox-label">
+            <input type="radio" name="tourAirline" value="" class="tour-airline-radio" checked>
+            <span>Tất cả các hãng</span>
+          </label>
+          <div id="tourAirlineFilter">
+            <!-- Nạp từ JS -->
+          </div>
+        </div>
+
+        <!-- Thời gian cất cánh / Khởi hành -->
+        <div class="filter-group">
+          <div class="filter-title">Thời lượng chuyến đi</div>
+          <label class="checkbox-label">
+            <input type="checkbox" checked disabled>
+            <span>3 - 4 Ngày (Ngắn ngày)</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" checked disabled>
+            <span>5 - 6 Ngày (Dài ngày)</span>
+          </label>
+        </div>
+      </aside>
+
+      <!-- CỘT PHẢI: KẾT QUẢ DANH SÁCH TOUR -->
+      <section class="results-content">
+        <div class="results-header">
+          <div class="font-bold text-main" id="tourResultCount">Đang tải danh sách tour...</div>
+          <div class="text-muted" style="font-size: 13px;">
+            <i class="fas fa-check-circle text-success"></i> Cam kết khởi hành đúng lịch trình
+          </div>
+        </div>
+
+        <div class="tours-grid" id="tourResultsList" style="grid-template-columns: repeat(2, 1fr);">
+          <!-- Render từ tour.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Vietjet Travel & Booking. Mọi quyền được bảo lưu.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/tour.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Chuyến Bay & Chọn Hạng Vé - Vietjet Travel</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- sql.js WebAssembly -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <img src="Images/vietjet-air.png" alt="Vietjet Logo">
+        <span class="brand-text">Vietjet<span>.com</span></span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Trang Chủ</a>
+        <a href="flights.html" class="nav-link active">Chuyến Bay</a>
+        <a href="tour.html" class="nav-link">Tour Du Lịch</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="hotline-pill">
+          <i class="fas fa-phone-alt"></i>
+          <span>1900 1886</span>
+        </div>
+        <a href="cart.html" class="cart-btn-link" title="Xem Giỏ Hàng">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container py-5" style="padding-top: 40px; padding-bottom: 80px;">
+    <!-- Nút quay lại -->
+    <div class="mb-4">
+      <a href="flights.html" class="btn btn-outline-gray btn-sm">
+        <i class="fas fa-arrow-left"></i> Quay lại danh sách chuyến bay
+      </a>
+    </div>
+
+    <!-- KHUNG THÔNG TIN CHUYẾN BAY -->
+    <div class="detail-hero-card" id="flightDetailInfo">
+      <div class="text-center py-4">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="text-muted mt-2">Đang tải thông tin chuyến bay...</p>
+      </div>
+    </div>
+
+    <!-- BẢNG LỰA CHỌN HẠNG VÉ -->
+    <div class="section-header mt-5">
+      <span class="section-tag"><i class="fas fa-ticket-alt"></i> Lựa Chọn Dịch Vụ</span>
+      <h2 class="section-title">Chọn Hạng Vé <span>Phù Hợp Với Bạn</span></h2>
+      <p class="section-desc">Chọn gói dịch vụ để tận hưởng hành trình bay thoải mái và tiện nghi nhất.</p>
+    </div>
+
+    <div class="fare-comparison-grid" id="fareComparisonSection">
+      <!-- Cột Hạng Phổ Thông -->
+      <div class="fare-card">
+        <div class="fare-class-title">Hạng Phổ Thông (Economy)</div>
+        <p class="text-muted" style="font-size: 13px; margin-bottom: 16px;">Sự lựa chọn thông minh và tiết kiệm nhất cho chuyến đi của bạn.</p>
+        <div class="fare-class-price" id="economyPriceVal">--- ₫</div>
+
+        <ul class="fare-perks-list">
+          <li><i class="fas fa-check-circle"></i> Hành lý xách tay 07 kg tiêu chuẩn</li>
+          <li><i class="fas fa-check-circle"></i> Ghế ngồi da êm ái, khoảng cách chân tiêu chuẩn</li>
+          <li><i class="fas fa-check-circle"></i> Check-in trực tuyến trước giờ bay 24h</li>
+          <li><i class="fas fa-check-circle"></i> Suất ăn nóng và nước uống mua thêm linh hoạt</li>
+          <li><i class="fas fa-info-circle text-muted"></i> Đổi ngày bay có tính phí chênh lệch</li>
+        </ul>
+
+        <button class="btn btn-outline btn-block" id="btnSelectEconomy">
+          <i class="fas fa-cart-plus"></i> Chọn Hạng Phổ Thông
+        </button>
+      </div>
+
+      <!-- Cột Hạng Thương Gia -->
+      <div class="fare-card highlight">
+        <div class="fare-card-badge">KHUYÊN DÙNG VIP</div>
+        <div class="fare-class-title text-primary">Hạng Thương Gia (Business)</div>
+        <p class="text-muted" style="font-size: 13px; margin-bottom: 16px;">Đặc quyền sang trọng, ưu tiên toàn diện từ mặt đất lên bầu trời.</p>
+        <div class="fare-class-price" id="businessPriceVal">--- ₫</div>
+
+        <ul class="fare-perks-list">
+          <li><i class="fas fa-check-circle"></i> Hành lý xách tay 14 kg + 30 kg ký gửi miễn cước</li>
+          <li><i class="fas fa-check-circle"></i> Quyền sử dụng Phòng Chờ Thương Gia VIP cao cấp</li>
+          <li><i class="fas fa-check-circle"></i> Lối đi ưu tiên tại quầy thủ tục & cửa lên máy bay</li>
+          <li><i class="fas fa-check-circle"></i> Ghế ngồi ngả phẳng tiện nghi, không gian riêng tư</li>
+          <li><i class="fas fa-check-circle"></i> Phục vụ ẩm thực nóng thượng hạng & rượu vang miễn phí</li>
+          <li><i class="fas fa-check-circle"></i> Miễn phí thay đổi ngày giờ bay</li>
+        </ul>
+
+        <button class="btn btn-primary btn-block" id="btnSelectBusiness">
+          <i class="fas fa-crown"></i> Chọn Hạng Thương Gia
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Vietjet Travel & Booking. Mọi quyền được bảo lưu.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/db.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const flightId = urlParams.get('id') || 1;
+
+      const flight = await window.dbApp.getFlightById(flightId);
+      if (!flight) {
+        document.getElementById('flightDetailInfo').innerHTML = `
+          <div class="text-center py-4">
+            <h3>Không tìm thấy thông tin chuyến bay!</h3>
+            <a href="flights.html" class="btn btn-primary mt-3">Quay lại</a>
+          </div>
+        `;
+        return;
+      }
+
+      // Render chi tiết
+      document.getElementById('flightDetailInfo').innerHTML = `
+        <div class="d-flex justify-between align-center" style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+          <div class="d-flex align-center gap-md">
+            <img src="${flight.airline_logo}" alt="${flight.airline_name}" style="height: 38px;">
+            <div>
+              <h2 style="font-size: 20px;">Chuyến bay ${flight.flight_number} • ${flight.airline_name}</h2>
+              <span class="text-muted" style="font-size: 13px;">Loại tàu bay: <strong>${flight.aircraft_type}</strong> (Boeing / Airbus hiện đại)</span>
+            </div>
+          </div>
+          <span class="badge badge-primary" style="font-size: 14px; padding: 6px 14px;">
+            <i class="fas fa-plane"></i> ${flight.stops === 0 ? 'Bay thẳng' : flight.stops + ' điểm dừng'}
+          </span>
+        </div>
+
+        <div class="d-flex justify-between align-center" style="background: #f8fafc; padding: 24px; border-radius: var(--radius-md);">
+          <div class="text-center" style="flex: 1;">
+            <div style="font-size: 28px; font-weight: 800; color: var(--primary-color);">${flight.departure_time}</div>
+            <div style="font-size: 16px; font-weight: 700;">${flight.departure_city}</div>
+            <div class="text-muted">Sân bay ${flight.departure_code}</div>
+          </div>
+
+          <div class="flight-line-indicator" style="flex: 1;">
+            <span class="flight-duration-txt">${flight.flight_duration}</span>
+            <div class="route-bar">
+              <i class="fas fa-plane"></i>
+            </div>
+            <span class="flight-stop-txt" style="color: var(--primary-color);">Hành trình bay an toàn</span>
+          </div>
+
+          <div class="text-center" style="flex: 1;">
+            <div style="font-size: 28px; font-weight: 800; color: var(--primary-color);">${flight.arrival_time}</div>
+            <div style="font-size: 16px; font-weight: 700;">${flight.destination_city}</div>
+            <div class="text-muted">Sân bay ${flight.destination_code}</div>
+          </div>
+        </div>
+      `;
+
+      // Cập nhật giá vé 2 hạng
+      document.getElementById('economyPriceVal').textContent = formatVND(flight.price_economy);
+      document.getElementById('businessPriceVal').textContent = formatVND(flight.price_business);
+
+      // Thêm vé Phổ thông vào giỏ hàng
+      document.getElementById('btnSelectEconomy').addEventListener('click', () => {
+        window.cartApp.addItem({
+          item_type: 'flight',
+          reference_id: flight.id,
+          title: `Vé máy bay ${flight.departure_city} ➔ ${flight.destination_city} (${flight.flight_number})`,
+          ticket_class: 'Phổ Thông (Economy)',
+          price: flight.price_economy,
+          airline: flight.airline_name,
+          aircraft: flight.aircraft_type,
+          time: `${flight.departure_time} - ${flight.arrival_time}`
+        });
+        setTimeout(() => window.location.href = 'cart.html', 400);
+      });
+
+      // Thêm vé Thương gia vào giỏ hàng
+      document.getElementById('btnSelectBusiness').addEventListener('click', () => {
+        window.cartApp.addItem({
+          item_type: 'flight',
+          reference_id: flight.id,
+          title: `Vé máy bay ${flight.departure_city} ➔ ${flight.destination_city} (${flight.flight_number})`,
+          ticket_class: 'Thương Gia (Business VIP)',
+          price: flight.price_business,
+          airline: flight.airline_name,
+          aircraft: flight.aircraft_type,
+          time: `${flight.departure_time} - ${flight.arrival_time}`
+        });
+        setTimeout(() => window.location.href = 'cart.html', 400);
+      });
+    });
+  </script>
+</body>
+</html>

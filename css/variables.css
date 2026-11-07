@@ -1,0 +1,77 @@
+/* ==============================================================================
+   CSS VARIABLES & DESIGN TOKENS
+   Website: Vietjet Travel & Booking
+   Theme: Nền sáng / Trắng, Màu chủ đạo: Đỏ Vietjet (#ee1d23)
+   ============================================================================== */
+
+:root {
+  /* Brand Colors */
+  --primary-color: #ee1d23;
+  --primary-hover: #c91419;
+  --primary-light: #fff1f2;
+  --primary-gradient: linear-gradient(135deg, #ee1d23 0%, #d8161c 100%);
+
+  --secondary-color: #f8b300;
+  --secondary-hover: #dfa000;
+  --secondary-light: #fff8e1;
+
+  /* Neutral & Base Colors */
+  --bg-color: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-alt: #f1f5f9;
+
+  /* Borders & Dividers */
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --border-focus: #ee1d23;
+
+  /* Text Colors */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-white: #ffffff;
+
+  /* Status Colors */
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #0284c7;
+
+  /* Typography */
+  --font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Box Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 14px 28px rgba(238, 29, 35, 0.15);
+
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 72px;
+  --transition: all 0.25s ease-in-out;
+}

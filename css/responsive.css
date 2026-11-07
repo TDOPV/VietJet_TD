@@ -1,0 +1,84 @@
+/* ==============================================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================================== */
+
+@media (max-width: 1100px) {
+  .tours-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .airlines-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .search-fields-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .swap-btn-wrap {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-layout-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .filter-sidebar {
+    position: static;
+    margin-bottom: var(--spacing-lg);
+  }
+  .flight-item-card {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  .flight-route-col {
+    padding: var(--spacing-md) 0;
+    border-top: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+  }
+  .flight-action-col {
+    border-left: none;
+    align-items: center;
+    padding-left: 0;
+  }
+  .cart-layout-grid {
+    grid-template-columns: 1fr;
+  }
+  .fare-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Mobile menu can be toggled */
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .airlines-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+  .search-fields-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .tours-grid {
+    grid-template-columns: 1fr;
+  }
+}
